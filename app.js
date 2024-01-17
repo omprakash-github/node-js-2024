@@ -1,16 +1,16 @@
-const express=require("express");
-const app=express();
+const express = require("express"); //requiring express package
+const app = express(); //strong it in app;
 
-const PORT=3000;
 
-//telling node js to set its view engine to ejs
-app.set('view enjine','ejs')
+//koi la / hanyo vane k dakune ho vanarw herna lai ho
+app.get('/', (req,res) => {
+  res.send("hello world")
+});
 
-//home page
-app.get("/",(req,res)=>{
-  res.render("home.ejs")
-})
-// script vatra kahya paxi chai npm start hanna parxa la guyss
-app.listen(PORT,()=>{
-    console.log("node js project has satrted at this" + PORT);
+app.get('/about', (req,res) => {
+    res.send("my name is omprakash lamichahen");
+  });
+//port number vanako hamro room number jastai raixa hai
+app.listen(3001, () => {
+  console.log("Node js project has  running in port 3001");
 });
