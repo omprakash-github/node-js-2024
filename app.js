@@ -1,10 +1,13 @@
 const express = require("express"); //requiring express package
 const app = express(); //strong it in app;
 
+//ejs use garna kojako so set garako hai; 
+app.set("view enjine","ejs")
 
 //koi la / hanyo vane k dakune ho vanarw herna lai ho
 app.get('/', (req,res) => {
-  res.send("hello world")
+  //render la chai kun file dakune vanrw dinxa hai
+  res.render("home.ejs");
 });
 
 app.get('/about', (req,res) => {
@@ -14,3 +17,5 @@ app.get('/about', (req,res) => {
 app.listen(3001, () => {
   console.log("Node js project has  running in port 3001");
 });
+
+//nodemon install garako kinake yasla hamlai auto server run garna help garxa
